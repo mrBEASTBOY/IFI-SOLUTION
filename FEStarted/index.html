@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Demo FE</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/34644578d6.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <p>Today's special Offers!</p>
+                </div>
+                
+                <div class="services">
+                    <div id="search-box" class="search">
+                        <i class="fas fa-search"></i>
+                        <div id="search-pop" class="search-bar">
+                            <form>
+                                <input class="searchPro" type="text" name="product" value="Search a product...">
+                                <input class="searchSub" type="submit" value=" ">
+                            </form>
+                        </div>
+                    </div>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-phone"></i>
+                    <div id="pop" class="sign">
+                        <i class="fas fa-user"></i>
+                        <div id="pop-item" class="choice">
+                            <p>Login</p>
+                            <hr>
+                            <p>Sign Up</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pc">
+                    <div class="search-lg">
+                        <input class="searchPro-lg" type="text" name="product" value="Search a product...">
+                        <input class="searchSub-lg" type="submit" value=" ">
+                    </div>
+                    <div id="search-box-md" class="search">
+                        <i class="fas fa-search"></i>
+                        <div id="search-pop-md" class="search-bar">
+                            <form>
+                                <input class="searchPro" type="text" name="product" value="Search a product...">
+                                <input class="searchSub" type="submit" value=" ">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <span class="view-cart">View your cart</span>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div id="pop-md" class="sign" onmouseover="mouseOver()" onmouseout="mouseOver()">
+                        <i class="fas fa-user"></i>
+                        <span class="show" ></span>
+                        <div id="pop-item-md" class="choice">
+                            <p>Login</p>
+                            <hr>
+                            <p>Sign Up</p>
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <h2>Contact Us</h2>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="js/search.js"></script>
+        <script src="js/signin.js"></script>
+    </body>
+</html>

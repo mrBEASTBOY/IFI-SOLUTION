@@ -1,0 +1,228 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+nav {
+    background-color: #249dafc9;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 23px;
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+}
+
+.logo p {
+    margin-bottom: unset;
+}
+
+.services {
+    color: white;
+}
+
+.services i {
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.services i:hover {
+    color: #007bff
+}
+.search {
+    display: inline-block;
+    
+}
+.search-bar {
+    display: inline-block;
+    position:absolute;
+    right: 7rem;
+    top: 0.01rem;
+    visibility: hidden;
+}
+.search-bar.visible {
+    visibility: visible;
+}
+.searchPro {
+    padding: .7rem 10.75rem .525rem .75rem;
+    border: white;
+    border-radius: 7px;
+}
+.searchSub {
+    padding: 0.7rem 1rem 0.525rem 1rem;
+    background: url(https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/img-sp.png) no-repeat 1px 5px #FA1818;
+    margin-left: -8px;
+    border: white;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: red;
+}
+.sign {
+    display: inline-block;
+}
+
+.choice {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    color: #999;
+    width: 140px;
+    text-align: center;
+    padding: 25px 0px;
+    border-radius: 7px;
+    top: 0.5rem;
+    right: 0.5rem;
+    top: 2.5rem;
+    visibility: hidden;
+}
+
+.choice.visible {
+    visibility: visible;
+}
+
+
+
+.choice p:hover {
+    color: #FA1818
+    
+} 
+
+.pc {
+    display: none;
+}
+
+
+@media screen and (min-width: 800px) {
+    .pc {
+        display: block;
+    }
+    .cart {
+        display: inline-block;
+        color: white;
+        cursor: pointer;
+        padding: 0rem 0.75rem 0rem 0rem;
+
+    }
+
+    .search {
+        color: white;
+        padding: 0rem 0.75rem 0rem 0rem;
+        cursor: pointer;
+    }
+
+    .search-bar {
+        top: 2.9rem;
+
+    }
+
+    .searchPro {
+        border: 1px solid #343a40;
+        outline: none;
+    }
+    .searchSub {
+        border: 1px solid #343a40;
+        background-color: #343a40;
+    }
+    .services {
+        visibility: hidden;
+    }
+
+    nav {
+        background-color: #343a40;
+    }
+    
+    .logo {
+        background: #249dafc9;
+    }
+
+    .contact {
+        display: inline-block;
+        padding: 0rem 1.75rem;
+        background-color: #FA1818;
+        color: white;
+    }
+
+    .sign {
+        color: white;
+        padding: 0rem 1.75rem 0rem 0rem;
+        height: 100%;
+    }
+
+    .show {
+        border: 5px solid transparent;
+        border-top-color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 1.55rem;
+        right: 14.5rem;
+    }
+
+    .choice {
+        right: 14.5rem;
+    }
+
+    .view-cart {
+        display: none;
+    }
+
+    .search-lg {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .sign {
+        color: white;
+        padding: 0rem 1.75rem 0rem 3rem;
+    }
+
+    .cart {
+    
+        border: 2px solid green;
+        padding: 0.5rem 0.75rem 0.35rem 0.75rem;
+        margin-right: 2rem;
+    }
+
+    .view-cart {
+        display: inline-block;
+    }
+
+    #search-box-md {
+        display: none;
+    }
+
+    .search-lg {
+        display: inline-block;
+        position: relative;
+        right: 9rem;
+    }
+
+    .searchPro-lg {
+        padding: 0.5rem 4.75rem .35rem 0.75rem;
+    }
+
+    .searchSub-lg {
+        padding: 0.5rem 1rem .35rem 1rem;
+        background: url(https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/img-sp.png) no-repeat 1px 4px #FA1818;
+        margin-left: -6px;
+        border: 2px solid #FA1818;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .logo {
+        padding: 0.35rem 3.5rem;
+    }
+
+
+}

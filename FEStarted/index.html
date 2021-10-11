@@ -9,10 +9,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/34644578d6.js" crossorigin="anonymous"></script>
+        <script src="js/store.js" async></script>
     </head>
     <body>
         <header>
@@ -60,6 +60,56 @@
                     <div class="cart">
                         <span class="view-cart">View your cart</span>
                         <i class="fas fa-shopping-cart"></i>
+                        <div class="cart-pop">
+                            <div class="list-cart">
+                                <ul class="cart-all-items">
+                                    <li class="cart-item">
+                                        <div class="item-name">
+                                            <a class="item-detail-name" href="#">Fortune Sunflower Oil</a>
+                                            <p class="item-discount">Discount: $1.00</p>
+                                        </div>
+
+                                        <div class="item-quantity">
+                                            <input class="item-quantity-detail" name="quantity_1" type="text" pattern="[0-9]*" value="1">
+                                        </div>
+
+                                        <div class="item-remove">
+                                            <button type="button" class="btn-remove">x</button>
+                                        </div>
+
+                                        <div class="item-price">
+                                            <p class="item-detail-price">$6.99</p>
+                                        </div>
+                                    </li>
+                                    <li class="cart-item">
+                                        <div class="item-name">
+                                            <a class="item-detail-name" href="#">Basmati Rise</a>
+                                            <p class="item-discount">Discount: $1.00</p>
+                                        </div>
+
+                                        <div class="item-quantity">
+                                            <input class="item-quantity-detail" name="quantity_1" type="text" pattern="[0-9]*" value="2">
+                                        </div>
+
+                                        <div class="item-remove">
+                                            <button type="button" class="btn-remove">x</button>
+                                        </div>
+
+                                        <div class="item-price">
+                                            <p class="item-detail-price">$10.99</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="result">
+                                    <h3 class="total-cart">
+                                        Subtotal: $6.99 USD
+                                    </h3>
+                                </div>
+                                <div class="checkout">
+                                    <button type="button">Check Out With</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="pop-md" class="sign" onmouseover="mouseOver()" onmouseout="mouseOver()">
                         <i class="fas fa-user"></i>
@@ -76,8 +126,539 @@
                 </div>
             </nav>
         </header>
+
+        <div class="logo-product">
+            <div class="container">
+                <div class="logo2">
+                    <h1>
+                        <a href="#"><span>Grocery</span>
+                            Store</a>
+                    </h1>
+                    <div class="back">
+
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="info1">
+                        <a href="#">Events</a>
+                        <p> / </p>
+                        <a href="#">About Us</a>
+                        <p> / </p>
+                        <a href="#">Best Deals</a>
+                        <p> / </p>
+                        <a href="#">Services</a>
+                    </div>
+                    <div id="contact-md1" class="contact-info">
+                        <i class="fas fa-phone-alt"></i><span>(+0123) 234 567</span>
+                        <i class="far fa-envelope"></i><span>store@grocery.com</span>
+                    </div>
+                </div>
+                <div id="contact-md2" class="contact-info">
+                    <i class="fas fa-phone-alt"></i><span>(+0123) 234 567</span>
+                    <i class="far fa-envelope"></i><span>store@grocery.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-bar">
+            <div class="hamburger">
+                <button type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <div class="hamburger-item"></div>
+                    <div class="hamburger-item"></div>
+                    <div class="hamburger-item"></div>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Branded Foods</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Households</a>
+                  </li>
+                  <li class="nav-item dropdown mega-dropdown active">
+                    <a data-toggle="collapse" data-target="#collapVeget" class="nav-link dropdown-toggle" href="#">Veggies & Fruits</a>
+                    <div class="collapse navbar-collapse" id="collapVeget">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link drop-nav" href="#">Vegetables</a>
+                            <a class="nav-link drop-nav" href="#">Fruits</a>
+                          </li>
+                        </ul>
+                    </div>
+                  </li>  
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Kitchen</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Short Codes</a>
+                  </li> 
+                  <li class="nav-item dropdown mega-dropdown active">
+                    <a data-toggle="collapse" data-target="#collapBever" class="nav-link dropdown-toggle" href="#">Beverages</a>
+                    <div class="collapse navbar-collapse" id="collapBever">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link drop-nav" href="#">Soft Drinks</a>
+                            <a class="nav-link drop-nav" href="#">Juices</a>
+                          </li>
+                        </ul>
+                    </div>
+                  </li>  
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pet Food</a>
+                  </li> 
+                  <li class="nav-item dropdown mega-dropdown active">
+                    <a data-toggle="collapse" data-target="#collapFrozen" class="nav-link dropdown-toggle" href="#">Frozen Foods</a>
+                    <div class="collapse navbar-collapse" id="collapFrozen">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link drop-nav" href="#">Frozen Snacks</a>
+                            <a class="nav-link drop-nav" href="#">Frozen Nonveg</a>
+                          </li>
+                        </ul>
+                    </div>
+                  </li>  
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Bread & Bakery</a>
+                  </li>    
+                </ul>
+            </div>
+        </div>
+
+        <div class="banner">
+            <div class="sidenav col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <a class="active" href="#">Branded Foods</a>
+                <a href="#">Households</a>
+                <div class="veget dropdown-m">
+                    <button class="dropbtn-m dropdown-toggle">Veggies & Fruits</button>
+                    <div class="dropdown-content-m">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                    </div>
+                </div>
+                <a href="#">Kitchen</a>
+                <a href="#">Short Codes</a>
+                <div class="bever dropdown-m">
+                    <button class="dropbtn-m dropdown-toggle">Beverages</button>
+                    <div class="dropdown-content-m">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                    </div>
+                </div>
+                <a href="#">Pet Food</a>
+                <div class="frozen dropdown-m">
+                    <button class="dropbtn-m dropdown-toggle">Frozen Foods</button>
+                    <div class="dropdown-content-m">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                    </div>
+                </div>
+                <a href="#">Bread & Bakery</a>
+
+
+            </div>
+
+
+            <div class="slideshow-container col-lg-8 col-md-8">
+                <div class="mySlides">
+                    <div class="banner1">
+                        <div class="move">
+                            <h3>
+                                Make your <span>food</span> with Spicy
+                            </h3>
+                            
+                            <div class="more-info">
+                                <a href="#">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mySlides">
+                    <div class="banner2">
+                        <h3>
+                            Make your <span>food</span> with Spicy
+                        </h3>
+                        <div class="more-info">
+                            <a href="#">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mySlides">
+                    <div class="banner3">
+                        <h3>
+                            Up to <span>50%</span> OFF.
+                        </h3>
+                        <div class="more-info">
+                            <a href="#">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="circle-dot" style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="advertise">
+            <div class="advertise-item">
+                <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/4.jpg" alt="discount">
+                <div class="discount-info">
+                    <p>Discount Offer</p>
+                    <div class="circle-discount">25%</div>
+                </div>
+            </div>
+
+            <div class="advertise-item">
+                <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/5.jpg" alt="groceries">
+                <div class="forGro">
+                    <p>Introducing <span>Best Store</span> For <b>GROCERIES</b></p>
+                </div>
+            </div>
+
+            <div class="advertise-item">
+                <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/6.jpg" alt="savemoney">
+                <div class="save">
+                    <p>Save <span>upto</span> $10</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hot">
+            <div class="hot-topic">
+                <p>Hot Offers</p>
+            </div>
+
+            <div class="grid-container">
+                <div class="offer">
+                    <div class="inside">
+                        <div class="tag">
+                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/tag.png" alt="tag" class="img-res">
+                        </div>
+                        <div class="product1">
+                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/1.png" alt="product1" class="img-res">
+                        </div>
+                        <div class="product-name">
+                            <p> Fortune Sunflower Oil</p>
+                            <p class="product-price">$7.99 <span>$10.00</span></p>
+                            <button class="btn-sub" type="button">ADD TO CART</button>
+                        </div>  
+                    </div>
+                </div>
+                <div class="offer">
+                    <div class="inside">
+                        
+                        <div class="product1">
+                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/3.png" alt="product1" class="img-res">
+                        </div>
+                        <div class="product-name">
+                            <p>Basmati Rise (5 Kg)</p>
+                            <p class="product-price rise-price">$11.99 <span>$15.00</span></p>
+                            <button class="btn-sub" type="button">ADD TO CART</button>
+                        </div>  
+                    </div>
+                </div>
+                <div class="offer offer-left">
+                    <div class="inside inside-left">
+                        <div class="tag-offer">
+                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/offer.png" alt="tag" class="img-res">
+                        </div>
+                        <div class="product1">
+                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/2.png" alt="product1" class="img-res">
+                        </div>
+                        <div class="product-name">
+                            <p>Pepsi Soft Drink (2 Ltr)</p>
+                            <p class="product-price">$8.00 <span>$10.00</span></p>
+                            <button class="btn-sub" type="button">ADD TO CART</button>
+                        </div>  
+                    </div>
+                </div>
+                <div class="offer offer-left">
+                    <div class="inside inside-left">
+                        <div class="tag-offer">
+                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/offer.png" alt="tag" class="img-res">
+                        </div>
+                        <div class="product1">
+                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/4.png" alt="product1" class="img-res">
+                        </div>
+                        <div class="product-name">
+                            <p> Dogs Food (4 Kg)</p>
+                            <p class="product-price dog-food-price">$9.00 <span>$11.00</span></p>
+                            <button class="btn-sub" type="button">ADD TO CART</button>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="top">
+            <div class="top-topic">
+                <p>Top Products</p>
+            </div>
+            <div class="top-info">
+                <div class="list-products">
+                    <ul>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <a href="#">All brands</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <a href="#">Vegetables</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <a href="#">fruits</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <a href="#">juices</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <a href="#">pet food</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <a href="#">bread & bakery</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <a href="#">cleaning</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <a href="#">spices</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <a href="#">dry fruits</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <a href="#">dairy products</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="img-all">
+                    <div class="img-only">
+                        <div class="img-top1">
+                            <div>
+                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/8.jpg" alt="special offer">
+                            </div>
+                        </div>
+
+                        <div class="img-top1 coco">
+                            <div class="first-img">
+                                <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/7.jpg" alt="stuff">
+                                <button type="button">Shop now</button>
+                            </div>
+                            <div class="second-img">
+                                <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/10.jpg" alt="store">
+                                <div class="inside-second-img">
+                                    Special <span>Offers</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="img-top1 coco">
+                            <div class="third-img">
+                                <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/9.jpg" alt="wine">
+                            </div>
+                            <div class="forth-img">
+                                <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/11.jpg" alt="veggies">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="special-off">
+                        <div class="off-post">
+                            <p>Get <span class="ani-off">25% Off</span> On First Order And Also Get Gift <span class="todo">Voucher</span></p>
+                            <div class="off-tag">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="sub">
+                <div class="head-sub">
+                    <p>Sign Up For Out Newsletter</p>
+                </div>
+                <div class="sub-mail">
+                    <input class="put-mail" type="text" value="Email">
+                    <button class="load-mail" type="submit">subcribe now</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-info">
+                <div class="footer-head">
+                    <h3>Information</h3>
+                </div>
+                <div class="footer-body">
+                    <ul>
+                        <li>
+                            <a href="#">Events</a>
+                        </li>
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Best Deals</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Short Codes</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info footer-policy">
+                <div class="footer-head">
+                    <h3>Policy info</h3>
+                </div>
+                <div class="footer-body">
+                    <ul>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms Of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info footer-quest">
+                <div class="footer-head">
+                    <h3>What in stores</h3>
+                </div>
+                <div class="footer-body">
+                    <ul>
+                        <li>
+                            <a href="#">Pet Food</a>
+                        </li>
+                        <li>
+                            <a href="#">Frozen Snacks</a>
+                        </li>
+                        <li>
+                            <a href="#">Kitchen</a>
+                        </li>
+                        <li>
+                            <a href="#">Branded Foods</a>
+                        </li>
+                        <li>
+                            <a href="#">Households</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-info footer-last">
+                <div class="footer-head">
+                    <h3>TWITTER POSTS</h3>
+                </div>
+                <div class="footer-body">
+                    <ul>
+                        <li class="twitter">
+                            <i class="fab fa-twitter"></i>
+                            <i style="margin-left: 0.75rem; color: green;">01 day ago</i>
+                            <span>Non numquam 
+                                <a href="#">http://sd.ds/13jklf#</a>
+                                 eius modi tempora incidunt ut labore et 
+                                 <a href="#">http://sd.ds/1389kjklf#quo</a>
+                                 nulla.
+                            </span>
+                        </li>
+                        <li class="twitter">
+                            <i class="fab fa-twitter"></i>
+                            <i style="margin-left: 0.75rem; color: green;">02 day ago</i>
+                            <span>Con numquam 
+                                 <a href="#">http://fd.uf/56hfg#</a>
+                                 eius modi tempora incidunt ut labore et
+                                 <a href="#">http://fd.uf/56hfg#</a>
+                                 quo nulla.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="footer-bottom">
+                <p>100% Secure Payments</p>
+                <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/card.png" alt="">
+            </div>
+            
+            <div class="footer-connect">
+                <p>Connect With Us</p>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="js/search.js"></script>
         <script src="js/signin.js"></script>
+        <script src="js/drop.js"></script>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+            }
+        </script>
     </body>
 </html>

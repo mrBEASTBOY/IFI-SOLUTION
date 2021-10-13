@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Demo FE</title>
+        <title>Home Grocery Store</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -8,6 +8,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="style.css">
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -17,28 +18,26 @@
     <body>
         <header>
             <nav>
+                
                 <div class="logo">
                     <p>Today's special Offers!</p>
                 </div>
-                
-                <div class="services">
-                    <div id="search-box" class="search">
-                        <i class="fas fa-search"></i>
-                        <div id="search-pop" class="search-bar">
-                            <form>
-                                <input class="searchPro" type="text" name="product" value="Search a product...">
-                                <input class="searchSub" type="submit" value=" ">
-                            </form>
+                <div style="display: none">
+                    <div class="services">
+                        <div id="search-box" class="search">
+                            <i class="fas fa-search"></i>
+                            <div id="search-pop" class="search-bar">
+                                <form>
+                                    <input class="searchPro" type="text" name="product" value="Search a product...">
+                                    <input class="searchSub" type="submit" value=" ">
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <i class="fas fa-shopping-cart"></i>
-                    <i class="fas fa-phone"></i>
-                    <div id="pop" class="sign">
-                        <i class="fas fa-user"></i>
-                        <div id="pop-item" class="choice">
-                            <p>Login</p>
-                            <hr>
-                            <p>Sign Up</p>
+                        
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-phone"></i>
+                        <div id="pop" class="sign">
+                            <i class="fas fa-user"></i>
                         </div>
                     </div>
                 </div>
@@ -60,56 +59,29 @@
                     <div class="cart">
                         <span class="view-cart">View your cart</span>
                         <i class="fas fa-shopping-cart"></i>
-                        <div class="cart-pop">
-                            <div class="list-cart">
-                                <ul class="cart-all-items">
-                                    <li class="cart-item">
-                                        <div class="item-name">
-                                            <a class="item-detail-name" href="#">Fortune Sunflower Oil</a>
-                                            <p class="item-discount">Discount: $1.00</p>
-                                        </div>
-
-                                        <div class="item-quantity">
-                                            <input class="item-quantity-detail" name="quantity_1" type="text" pattern="[0-9]*" value="1">
-                                        </div>
-
-                                        <div class="item-remove">
-                                            <button type="button" class="btn-remove">x</button>
-                                        </div>
-
-                                        <div class="item-price">
-                                            <p class="item-detail-price">$6.99</p>
-                                        </div>
-                                    </li>
-                                    <li class="cart-item">
-                                        <div class="item-name">
-                                            <a class="item-detail-name" href="#">Basmati Rise</a>
-                                            <p class="item-discount">Discount: $1.00</p>
-                                        </div>
-
-                                        <div class="item-quantity">
-                                            <input class="item-quantity-detail" name="quantity_1" type="text" pattern="[0-9]*" value="2">
-                                        </div>
-
-                                        <div class="item-remove">
-                                            <button type="button" class="btn-remove">x</button>
-                                        </div>
-
-                                        <div class="item-price">
-                                            <p class="item-detail-price">$10.99</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="result">
-                                    <h3 class="total-cart">
-                                        Subtotal: $6.99 USD
-                                    </h3>
-                                </div>
-                                <div class="checkout">
-                                    <button type="button">Check Out With</button>
+                        <div class="empty-cart">
+                            <button type="button" class="close-empty">x</button>
+                            <p>Your shopping cart is empty</p>
+                            
+                        </div>
+                        <form action="/lala.php">
+                            <div class="cart-pop">
+                                <button type="button" class="close-cart">x</button>
+                                <div class="list-cart">
+                                    <ul class="cart-all-items" id="my-cart">
+                                    
+                                    </ul>
+                                    <div class="result">
+                                        <h3 class="total-cart">
+                                            Subtotal: $6.99 USD
+                                        </h3>
+                                    </div>
+                                    <div class="checkout">
+                                        <button type="submit">Check Out With</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <div id="pop-md" class="sign" onmouseover="mouseOver()" onmouseout="mouseOver()">
                         <i class="fas fa-user"></i>
@@ -121,6 +93,7 @@
                         </div>
                     </div>
                     <div class="contact">
+                        <i class="fas fa-phone"></i>
                         <h2>Contact Us</h2>
                     </div>
                 </div>
@@ -332,62 +305,77 @@
             </div>
 
             <div class="grid-container">
-                <div class="offer">
-                    <div class="inside">
-                        <div class="tag">
-                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/tag.png" alt="tag" class="img-res">
+                <div class="shop-product">
+                    <div class="offer">
+                        <div class="inside">
+                            <div class="tag">
+                                <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/tag.png" alt="tag" class="img-res">
+                            </div>
+                            <figure>
+                                <div class="product1">
+                                    <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/1.png" alt="product1" class="img-res">
+                                </div>
+                                <div id="product-1" class="product-name">
+                                    <p class="product-detail-name"> Fortune Sunflower Oil</p>
+                                    <p class="product-price">$7.99 <span>$10.00</span></p>
+                                    <button class="btn-sub shop-btn" type="button">ADD TO CART</button>
+                                </div>  
+                            </figure>
                         </div>
-                        <div class="product1">
-                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/1.png" alt="product1" class="img-res">
-                        </div>
-                        <div class="product-name">
-                            <p> Fortune Sunflower Oil</p>
-                            <p class="product-price">$7.99 <span>$10.00</span></p>
-                            <button class="btn-sub" type="button">ADD TO CART</button>
-                        </div>  
                     </div>
                 </div>
-                <div class="offer">
-                    <div class="inside">
-                        
-                        <div class="product1">
-                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/3.png" alt="product1" class="img-res">
+                <div class="shop-product">
+                    <div class="offer">
+                        <div class="inside">
+                            <figure>
+                                <div class="product1">
+                                    <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/3.png" alt="product1" class="img-res">
+                                </div>
+                                <div id="product-2" class="product-name">
+                                    <p class="product-detail-name">Basmati Rise (5 Kg)</p>
+                                    <p class="product-price rise-price">$11.99 <span>$15.00</span></p>
+                                    <button class="btn-sub shop-btn" type="button">ADD TO CART</button>
+                                </div>  
+                            </figure>
                         </div>
-                        <div class="product-name">
-                            <p>Basmati Rise (5 Kg)</p>
-                            <p class="product-price rise-price">$11.99 <span>$15.00</span></p>
-                            <button class="btn-sub" type="button">ADD TO CART</button>
-                        </div>  
                     </div>
                 </div>
-                <div class="offer offer-left">
-                    <div class="inside inside-left">
-                        <div class="tag-offer">
-                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/offer.png" alt="tag" class="img-res">
+                <div class="shop-product">
+                    <div class="offer offer-left">
+                        <div class="inside inside-left">
+                            <div class="tag-offer">
+                                <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/offer.png" alt="tag" class="img-res">
+                            </div>
+                            <figure>
+                                <div class="product1">
+                                    <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/2.png" alt="product1" class="img-res">
+                                </div>
+                                <div id="product-3" class="product-name">
+                                    <p class="product-detail-name">Pepsi Soft Drink (2 Ltr)</p>
+                                    <p class="product-price">$8.00 <span>$10.00</span></p>
+                                    <button class="btn-sub shop-btn" type="button">ADD TO CART</button>
+                                </div>  
+                            </figure>
                         </div>
-                        <div class="product1">
-                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/2.png" alt="product1" class="img-res">
-                        </div>
-                        <div class="product-name">
-                            <p>Pepsi Soft Drink (2 Ltr)</p>
-                            <p class="product-price">$8.00 <span>$10.00</span></p>
-                            <button class="btn-sub" type="button">ADD TO CART</button>
-                        </div>  
                     </div>
                 </div>
-                <div class="offer offer-left">
-                    <div class="inside inside-left">
-                        <div class="tag-offer">
-                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/offer.png" alt="tag" class="img-res">
+                <div class="shop-product">
+                    <div class="offer offer-left">
+                        <div class="inside inside-left">
+                            <div class="tag-offer">
+                                <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/offer.png" alt="tag" class="img-res">
+                            </div>
+                            <figure>
+                                <div class="product1">
+                                    <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/4.png" alt="product1" class="img-res">
+                                </div>
+                                <div id="product-4" class="product-name">
+                                    <p class="product-detail-name"> Dogs Food (4 Kg)</p>
+                                    <p class="product-price dog-food-price">$9.00 <span>$11.00</span></p>
+                                    <button class="btn-sub shop-btn" type="button">ADD TO CART</button>
+                                </div>  
+                            </figure>
                         </div>
-                        <div class="product1">
-                            <img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/4.png" alt="product1" class="img-res">
-                        </div>
-                        <div class="product-name">
-                            <p> Dogs Food (4 Kg)</p>
-                            <p class="product-price dog-food-price">$9.00 <span>$11.00</span></p>
-                            <button class="btn-sub" type="button">ADD TO CART</button>
-                        </div>  
                     </div>
                 </div>
             </div>
@@ -603,28 +591,28 @@
             <div class="footer-connect">
                 <p>Connect With Us</p>
                 <ul>
-                    <li>
+                    <li class="facebook">
                         <a href="#">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li class="twitter-icon">
+                        <a href="#" >
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li class="google-plus">
+                        <a href="#" >
                             <i class="fab fa-google-plus-g"></i>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li class="insta">
+                        <a href="#" >
                             <i class="fab fa-instagram"></i>
                         </a>
-                    </li>
-                    <li>
-                        <a href="#">
+                    </li>   
+                    <li class="dribbble">
+                        <a href="#" >
                             <i class="fab fa-dribbble"></i>
                         </a>
                     </li>
@@ -639,6 +627,26 @@
         <script>
             var slideIndex = 1;
             showSlides(slideIndex);
+
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                var y = document.getElementsByClassName("dot");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                    y[i].className = y[i].className.replace(" active", "");
+                }
+                myIndex++;
+                if (myIndex > x.length) {
+                    myIndex = 1;
+                }    
+                x[myIndex-1].style.display = "block";  
+                y[myIndex-1].className += " active";
+                setTimeout(carousel, 2000);
+            }
 
             function currentSlide(n) {
                 showSlides(slideIndex = n);

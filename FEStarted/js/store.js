@@ -21,9 +21,7 @@ function ready() {
     var addToCartButtons = document.getElementsByClassName('shop-btn');
     for(var i = 0; i < addToCartButtons.length; i++) {
         var button = addToCartButtons[i];
-        button.addEventListener('click', addToCartStorage);
-        button.addEventListener('click', addToCartClicked);
-        button.addEventListener('click', checkCart);
+        button.addEventListener('click', addToCart);
     }
 
     var closeButton = document.getElementsByClassName('close-cart')[0];
@@ -35,6 +33,12 @@ function ready() {
     var closeEmptyButton = document.getElementsByClassName('close-empty')[0];
     closeEmptyButton.addEventListener('click', closeEmptyPop);
 
+}
+
+function addToCart(event) {
+    const newItem = addToCartStorage(event);
+    generateCartItem(newItem);
+    checkCart()
 }
 
 function closeEmptyPop(event) {
@@ -123,6 +127,7 @@ function addToCartStorage(event) {
         cart[id] = newItem;
     }
     localStorage.setItem('cart', JSON.stringify(cart));
+    return newItem;
 }
 
 function addToCartClicked(event) {
@@ -137,6 +142,11 @@ function addToCartClicked(event) {
     updateCartTotal();
 }
 
+function generateCartItem(newItem) {
+    generateCartItemAction(newItem);
+    updateCartTotal();
+}
+
 function initCartFromStorage() {
     const cart = JSON.parse(localStorage.getItem('cart'));
     let total = 0;
@@ -144,14 +154,14 @@ function initCartFromStorage() {
         const $cart = $('#my-cart');
         for (let key in cart) {
             const item = cart[key];
-            const html = `<li id="` + item.id + `">
+            const html = `<li id="` + "cart-" + item.id + `">
             <div class="item-name">
                 <a class="item-detail-name" href="#">Le Hoang Linh</a>
                 <p class="item-discount">Discount: $1.00</p>
             </div>
 
             <div class="item-quantity">
-                <input class="item-quantity-detail" name="quantity_1" type="text" pattern="[0-9]*" value="1" required>
+                <input class="item-quantity-detail" name="quantity_1" type="text" pattern="[0-9]*" value="1" required id="item-quantity-${item.id}">
             </div>
 
             <div class="item-remove">
@@ -213,6 +223,53 @@ function addItemToCart(name, price, id) {
 
     <div class="item-price">
         <p class="item-detail-price">$${price - 1}</p>
+    </div>`;
+    cartRow.innerHTML = cartRowContents;
+    cartItems.append(cartRow);
+    cartRow.getElementsByClassName('btn-remove')[0].addEventListener('click', removeCartItem);
+    cartRow.getElementsByClassName('item-quantity-detail')[0].addEventListener('change', quantityChanged);
+}
+
+
+function generateCartItemAction(newItem) {
+    var cartRow = document.createElement('li');
+    cartRow.setAttribute("id", "cart-" + newItem.id);
+    cartRow.classList.add('cart-item')
+    
+    var cartItems = document.getElementsByClassName('cart-all-items')[0];
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    if (cart[newItem.id] && document.getElementById("cart-" + newItem.id)) {
+        let currentItem = document.getElementById("cart-" + newItem.id);
+        let cartItemQuantity = document.getElementById('item-quantity-' + newItem.id);
+        let cartItemPrice = currentItem.getElementsByClassName('item-detail-price')[0];
+        let cartItemDiscount = currentItem.getElementsByClassName('item-discount')[0];
+        let quantity = parseInt(cartItemQuantity.value);
+        quantity += 1;
+        newItem.price *= quantity;
+        newItem.price -= quantity;
+        cartItemDiscount.innerHTML = "Discount: $" + quantity + ".00";
+        cartItemPrice.innerHTML = '$ ' + newItem.price;
+        cartItemQuantity.value = quantity;
+        updateCartTotal();
+        return;
+    }
+
+    var cartRowContents = `
+    <div class="item-name">
+        <a class="item-detail-name" href="#">${newItem.name}</a>
+        <p class="item-discount">Discount: $1.00</p>
+    </div>
+
+    <div class="item-quantity">
+        <input class="item-quantity-detail" name="quantity_1" type="text" pattern="[0-9]*" value="1" required id="item-quantity-${newItem.id}">
+    </div>
+
+    <div class="item-remove">
+        <button type="button" class="btn-remove">x</button>
+    </div>
+
+    <div class="item-price">
+        <p class="item-detail-price">$${newItem.price - 1}</p>
     </div>`;
     cartRow.innerHTML = cartRowContents;
     cartItems.append(cartRow);

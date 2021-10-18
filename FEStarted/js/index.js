@@ -1,7 +1,5 @@
 $(document).ready(function() {
     initPage();
-    initCartFromStorage()
-
 })
 
 function initCartFromStorage() {
@@ -40,7 +38,7 @@ function initCartFromStorage() {
 function initPage() {
     const $start = $('#start');
     const $end = $('#end');
-    $.get('/components/header.html', data => {$start.append(data)})
+    $.get('/components/header.html', data => {$start.append(data); initCartFromStorage();})
     $.get('/components/footer.html', data => {$end.append(data)})
 }
 

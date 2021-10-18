@@ -1,0 +1,54 @@
+<div class="product-intro col-md-12">
+    <div id="product-20" class="product-name product-name-fix">
+        <h4 class="product-detail-name">CHARMINAR PULAO BASMATI RICE 5 KG</h4>
+    </div>
+    <div class="change-flex">
+        <div class="img-magnifier-container">
+            <img id="productImage" src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/76.png" alt="">
+        </div>
+        <div class="product-detail-info">
+            <form>
+                <fieldset>
+                  <span class="star-cb-group">
+                    <input type="radio" id="rating-5" name="rating" value="5" />
+                    <label for="rating-5"></label>
+                    <input type="radio" id="rating-4" name="rating" value="4" checked="checked" />
+                    <label for="rating-4"></label>
+                    <input type="radio" id="rating-3" name="rating" value="3" />
+                    <label for="rating-3"></label>
+                    <input type="radio" id="rating-2" name="rating" value="2" />
+                    <label for="rating-2"></label>
+                    <input type="radio" id="rating-1" name="rating" value="1" />
+                    <label for="rating-1"></label>
+                  </span>
+                </fieldset>
+              </form>
+              <div class="product-des">
+                <h3>Description:</h3>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              </div>
+              <div class="payment" id="product-20">
+                <div>
+                    <p class="product-price">$21.00</p>
+                    <p class="product-undiscount">$25.00</p>
+                </div>
+                <button class="btn-sub shop-btn" type="button" onclick=addToSingleCart(event)>ADD TO CART</button>
+              </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/okzoom.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#productImage').okzoom({
+                width: 150,
+                height: 150,
+                round: true,
+                background: "#fff",
+                backgroundRepeat: "no-repeat",
+                shadow: "0 0 5px #000",
+                border: "1px solid black"
+                });
+            })
+        </script>

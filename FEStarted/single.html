@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>Single Product</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/34644578d6.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="start-pro">
+
+        </div>
+
+        <div class="banner">
+            <div class="sidenav col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <a class="active" href="#">Branded Foods</a>
+                <a href="#">Households</a>
+                <div class="veget dropdown-m">
+                    <button class="dropbtn-m dropdown-toggle">Veggies & Fruits</button>
+                    <div class="dropdown-content-m">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                    </div>
+                </div>
+                <a href="#">Kitchen</a>
+                <a href="#">Short Codes</a>
+                <div class="bever dropdown-m">
+                    <button class="dropbtn-m dropdown-toggle">Beverages</button>
+                    <div class="dropdown-content-m">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                    </div>
+                </div>
+                <a href="#">Pet Food</a>
+                <div class="frozen dropdown-m">
+                    <button class="dropbtn-m dropdown-toggle">Frozen Foods</button>
+                    <div class="dropdown-content-m">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                    </div>
+                </div>
+                <a href="#">Bread & Bakery</a>
+            </div>
+
+
+            <div class="slideshow-container col-lg-8 col-md-8">
+                <div class="banner-img col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                    <h3>Best Deals For New Products<span class="spe-off"></span></h3>
+                </div>
+
+                <div id="single-product-detail">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="more-product col-lg-12 col-md-12 col-xs-12 col-sm-12">
+            <div class="popular popular-product cold">
+                <div class="popular-topic">
+                    <p>Popular Brands</p>
+                </div>
+
+                <div class="type-container">
+                    <p class="topic">Food</p>
+
+                    <div class="grid-container grid-fix" id="food">
+                        
+                    </div>
+                </div>
+
+                <div class="type-container">
+                    <p class="topic">vegetables & Fruits</p>
+
+                    <div class="grid-container grid-fix" id="veget-fruit">
+                        
+                    </div>
+                </div>
+
+                <div class="type-container">
+                    <p class="topic">Beverages</p>
+
+                    <div class="grid-container grid-fix" id="beverage">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div id="end"></div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="js/okzoom.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#productImage').okzoom({
+                width: 150,
+                height: 150,
+                round: true,
+                background: "#fff",
+                backgroundRepeat: "no-repeat",
+                shadow: "0 0 5px #000",
+                border: "1px solid black"
+                });
+            })
+        </script>
+        <script src="/js/store.js"></script>
+        <script src="/js/index.js"></script>
+        <script src="/js/common.js"></script>
+    </body>
+</html>

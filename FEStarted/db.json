@@ -1,7 +1,13 @@
 {
   "menus": [
-    { "id": "BF", "title": "Branded Foods" },
-    { "id": "HH", "title": "Households"},
+    {
+      "id": "BF",
+      "title": "Branded Foods"
+    },
+    {
+      "id": "HH",
+      "title": "Households"
+    },
     {
       "id": "VF",
       "title": "Veggies & Fruits",
@@ -10,11 +16,20 @@
           "id": "VF_V",
           "title": "Vegetables"
         },
-        { "id": "VF_F", "title": "Fruits" }
+        {
+          "id": "VF_F",
+          "title": "Fruits"
+        }
       ]
     },
-    { "id": "KT", "title": "Kitchen"},
-    { "id": "SC", "title": "Short Codes"},
+    {
+      "id": "KT",
+      "title": "Kitchen"
+    },
+    {
+      "id": "SC",
+      "title": "Short Codes"
+    },
     {
       "id": "B",
       "title": "Beverages",
@@ -23,10 +38,16 @@
           "id": "B_S",
           "title": "Soft Drinks"
         },
-        { "id": "B_J", "title": "Juices" }
+        {
+          "id": "B_J",
+          "title": "Juices"
+        }
       ]
     },
-    { "id": "PF", "title": "Pet Food"},
+    {
+      "id": "PF",
+      "title": "Pet Food"
+    },
     {
       "id": "FF",
       "title": "Frozen Foods",
@@ -35,152 +56,170 @@
           "id": "FF_FS",
           "title": "Frozen Snacks"
         },
-        { "id": "FF_FN", "title": "Frozen Nonveg" }
+        {
+          "id": "FF_FN",
+          "title": "Frozen Nonveg"
+        }
       ]
     },
-    { "id": "BB", "title": "Bread & Bakery"}
+    {
+      "id": "BB",
+      "title": "Bread & Bakery"
+    }
   ],
-
   "products": [
     {
-      "id": "product-1", 
+      "id": "product-1",
       "title": "Fortune Sunflower Oil",
       "undiscount-price": "$10.00",
       "discount-price": "$7.99",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/1.png",
-      "types": "tag"
+      "types": "tag",
+      "from": "home"
     },
     {
-      "id": "product-2", 
+      "id": "product-2",
       "title": "Basmati Rise (5 Kg)",
       "undiscount-price": "$15.00",
       "discount-price": "$11.99",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/3.png",
-      "types": "none"
+      "types": "none",
+      "from": "home"
     },
     {
-      "id": "product-3", 
+      "id": "product-3",
       "title": "Pepsi Soft Drink (2 Ltr)",
       "undiscount-price": "$10.00",
       "discount-price": "$8.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/2.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "home"
     },
     {
-      "id": "product-4", 
+      "id": "product-4",
       "title": "Dogs Food (4 Kg)",
       "undiscount-price": "$11.00",
       "discount-price": "$9.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/4.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "home"
     }
   ],
-
   "food-products": [
     {
-      "id": "product-5", 
+      "id": "product-5",
       "title": "Knorr Instant Soup (100 Gm)",
       "undiscount-price": "$5.00",
       "discount-price": "$3.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/5.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "food"
     },
     {
-      "id": "product-6", 
+      "id": "product-6",
       "title": "Chings Noodles (75 Gm)",
       "undiscount-price": "$8.00",
       "discount-price": "$5.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/6.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "food"
     },
     {
-      "id": "product-7", 
+      "id": "product-7",
       "title": "Lahsun Sev (150 Gm)",
       "undiscount-price": "$5.00",
       "discount-price": "$3.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/7.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "food"
     },
     {
-      "id": "product-8", 
+      "id": "product-8",
       "title": "Premium Bake Rusk",
       "undiscount-price": "$7.00",
       "discount-price": "$5.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/1.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "food"
     }
   ],
-
   "veget-fruit": [
     {
-      "id": "product-9", 
+      "id": "product-9",
       "title": "Fresh Spinach (Palak)",
       "undiscount-price": "$3.00",
       "discount-price": "$2.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/9.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "veget"
     },
     {
-      "id": "product-10", 
+      "id": "product-10",
       "title": "Fresh Mango Dasheri (1 Kg)",
       "undiscount-price": "$8.00",
       "discount-price": "$5.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/10.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "veget"
     },
     {
-      "id": "product-11", 
+      "id": "product-11",
       "title": "Fresh Apple Red (1 Kg)",
       "undiscount-price": "$8.00",
       "discount-price": "$6.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/11.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "veget"
     },
     {
-      "id": "product-12", 
+      "id": "product-12",
       "title": "Fresh Broccoli (500 Gm)",
       "undiscount-price": "$6.00",
       "discount-price": "$4.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/12.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "veget"
     }
   ],
-
   "beverage": [
     {
-      "id": "product-13", 
+      "id": "product-13",
       "title": "Mixed Fruit Juice (1 Ltr)",
       "undiscount-price": "$4.00",
       "discount-price": "$3.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/13.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "bever"
     },
     {
-      "id": "product-14", 
+      "id": "product-14",
       "title": "Prune Juice - Sunsweet (1 Ltr)",
       "undiscount-price": "$5.00",
       "discount-price": "$4.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/14.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "bever"
     },
     {
-      "id": "product-15", 
+      "id": "product-15",
       "title": "Coca Cola Zero Can (330 Ml)",
       "undiscount-price": "$5.00",
       "discount-price": "$3.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/15.png",
-      "types": "none"
+      "types": "none",
+      "from": "bever"
     },
     {
-      "id": "product-16", 
+      "id": "product-16",
       "title": "Sprite Bottle (2 Ltr)",
       "undiscount-price": "$4.00",
       "discount-price": "$3.00",
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/16.png",
-      "types": "offer"
+      "types": "offer",
+      "from": "bever"
     }
-
+  ],
+  "customer-bill": [
+    
   ]
 }
-
-

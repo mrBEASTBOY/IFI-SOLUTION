@@ -1,26 +1,28 @@
 function addToSingleCart(event) {
     const newItem = addSingleToCartStorage(event);
-    generateCartItem(newItem);
+    generateSingleItem(newItem);
     checkCart();
 }
 
 function addSingleToCartStorage(event) {
     const $item = $(event.target).closest('.payment');
-    const name = $item.find('.product-detail-name').text();
+    const name = $('.single-detail-product').text();
     const price = parseFloat($item.find('.product-price').text().replace('$', ''));
-    const count = 1;
+    const count = parseFloat($('.current-quantity').text());;
     const id = $item.attr('id');
+    const srcPic = $('#productImage').attr('src');
 
     const newItem = {
         price: price,
         name: name,
         count: count,
-        id: id
+        id: id,
+        pic: srcPic
     }
     if (!localStorage.getItem('cart')) localStorage.setItem('cart', JSON.stringify({}));
     const cart = JSON.parse(localStorage.getItem('cart'));
     if (cart[id]) {
-        cart[id].count = parseInt(cart[id].count) + 1;
+        cart[id].count = parseInt(cart[id].count) + count;
     } else {
         cart[id] = newItem;
     }
@@ -68,12 +70,16 @@ function deleteCheckItem(event) {
     const $cartId = $('#cart-' + id);
     const $cartItem = $($cartId).closest('.cart-item');
     const $basketId = $('#basket-' + id);
+    var numberItem = parseInt($('.number-item').find('span').text());
+    numberItem -= 1;
+    $('.number-item').find('span').text(numberItem);
     const $basketItem = $($basketId).closest('.basket-item-detail');
     delete cart[id]
     $('.service-charge').text(serviceCharge);
     $basketItem.remove();
     $cartItem.remove();
     $item.remove();
+
     localStorage.setItem('cart', JSON.stringify(cart))
     updateCartTotal();
 }
@@ -88,6 +94,9 @@ function deleteItem(event) {
     const $basketItem = $($basketId).closest('.basket-item-detail');
     const cart = JSON.parse(localStorage.getItem('cart'));
     delete cart[id]
+    var numberItem = parseInt($('.number-item').find('span').text());
+    numberItem -= 1;
+    $('.number-item').find('span').text(numberItem);
     $('.service-charge').text(serviceCharge);
     $checkItem.remove();
     $item.remove();
@@ -129,6 +138,21 @@ function quantityChanged(event) {
     
     updateCartTotal();
 
+}
+
+function singlePlus(event) {
+    var value = parseFloat($('.current-quantity').text());
+    value += 1;
+    $('.current-quantity').text(value);
+}
+
+function singleMinus(event) {
+    var value = parseFloat($('.current-quantity').text());
+    if(value == 1) {
+        return;
+    }
+    value -= 1;
+    $('.current-quantity').text(value);
 }
 
 function checkPlus(event) {
@@ -213,8 +237,118 @@ function generateCartItem(newItem) {
     updateCartTotal();
 }
 
+function generateSingleItem(newItem) {
+    generateSingleAction(newItem);
+    updateCartTotal();
+}
 function generateCartRow(newItem) {
 
+}
+
+function generateSingleAction(newItem) {
+    var cartRow = document.createElement('li');
+    cartRow.setAttribute("id", "cart-" + newItem.id);
+    cartRow.classList.add('cart-item');
+    
+    var cartItems = document.getElementsByClassName('cart-all-items')[0];
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    if (cart[newItem.id] && document.getElementById("cart-" + newItem.id)) {
+        let currentItem = document.getElementById("cart-" + newItem.id);
+        let cartItemQuantity = document.getElementById('item-quantity-' + newItem.id);
+        let cartItemPrice = currentItem.getElementsByClassName('item-detail-price')[0];
+        let cartItemDiscount = currentItem.getElementsByClassName('item-discount')[0];
+        let quantity = parseInt(cartItemQuantity.value);
+        quantity += parseFloat($('.current-quantity').text());
+        newItem.price *= quantity;
+        newItem.price -= quantity;
+        cartItemDiscount.innerHTML = "Discount: $" + quantity + ".00";
+        cartItemPrice.innerHTML = '$ ' + newItem.price;
+        cartItemQuantity.value = quantity;
+        updateCartTotal();
+        return;
+    }
+
+    var cartRowContents = `
+    <div class="item-name">
+        <a class="item-detail-name" href="#">${newItem.name}</a>
+        <p class="item-discount">Discount: $${newItem.count}.00</p>
+    </div>
+
+    <div class="item-quantity">
+        <input class="item-quantity-detail" name="quantity_1" type="text" pattern="[0-9]*" value="${newItem.count}" onChange=quantityChanged(event) required id="item-quantity-${newItem.id}">
+    </div>
+
+    <div class="item-remove">
+        <button type="button" class="btn-remove" onclick=deleteItem(event)>x</button>
+    </div>
+
+    <div class="item-price">
+        <p class="item-detail-price">$${(newItem.price - 1) * newItem.count}</p>
+    </div>`;
+    cartRow.innerHTML = cartRowContents;
+    cartItems.append(cartRow);
+    cartRow.getElementsByClassName('item-quantity-detail')[0].addEventListener('change', quantityChanged);
+}
+
+function deliver(event) {
+    var fname = $("#fname").val();
+    var phone = $('#phone').val();
+    var landmark = $('#landmark').val();
+    var town = $('#town').val();
+    var address = $('#address').val();
+    var services = $('.service-charge').text();
+    var totalBill = parseFloat($('.total-basket-result').text().replace("$", ""));
+    var billItem = [];
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    var i = 1;
+    var k = 0;
+    for(let x in cart) {
+        billItem[k] = {
+            number: i,
+            productName: cart[x].name,
+            productPrice: cart[x].price * cart[x].count,
+            productQuantity: cart[x].count,
+        }
+        delete cart[x];
+        k++;
+        i++;
+    }
+        
+    var formData = {
+        firstname: fname, 
+        phonenumber: phone, 
+        land: landmark, 
+        city: town, 
+        home: address,
+        bill: billItem,
+        serviceCharge: services,
+        total: "$" + totalBill
+    }
+
+
+    $.ajax({
+        url: "http://localhost:3000/customer-bill",
+        type: "POST",
+        async: true,
+        data: JSON.stringify(formData),
+        contentType: "application/json; charset=utf-8",
+		dataType: 'JSON',
+        success : function(result) {
+            console.log(formData);
+		},
+        error : function() {}
+    })
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+}
+
+function clearField() {
+    $("#fname").val("");
+    $('#phone').val("");
+    $('#landmark').val("");
+    $('#town').val("");
+    $('#address').val("");
 }
 function generateCartItemAction(newItem) {
     var cartRow = document.createElement('li');

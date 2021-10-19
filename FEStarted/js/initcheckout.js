@@ -87,7 +87,7 @@ function initCartFromStorage() {
         <p class="basket-item-name">Total Service Charges</p>
         <p class="basket-item-price service-charge">$`+ services + `.00</p>
         </li>`)
-        $checkContain.find('.type-topic').append(`<p class="topic">YOUR SHOPPING CART CONTAINS: ` + (i - 1) + ` PRODUCTS</p>`)
+        $checkContain.find('.type-topic').append(`<p class="topic number-item">YOUR SHOPPING CART CONTAINS: <span>` + (i - 1) + `</span> PRODUCTS</p>`)
     }
 }
 
@@ -98,7 +98,6 @@ function initPage() {
     const $singlePro = $('#single-product-detail');
     $.get('/components/header.html', data => {$start.append(data)})
     $.get('/components/footer.html', data => {$end.append(data)})
-    $.get('/components/singleproduct.html', data => {$singlePro.append(data)})
     $.get('/components/header-product.html', data => {$startPro.append(data); initCartFromStorage();});
     $.ajax({
         url: 'http://localhost:3000/products',
@@ -234,4 +233,11 @@ function initCheckOutFromStorage() {
             $checkOut.append($html);
         }
     }
+}
+
+function search(event) {
+    const searchText = $('.searchPro-lg').val();
+    const searchTextMobile = $('#search-pop-md').find('searchPro').val();
+    $('.search-lg').find('a').attr('href', 'search.html?search=' + searchText);
+    $('#search-pop-md').find('form').attr('action', 'search.html?search=' + searchTextMobile);
 }

@@ -7,14 +7,14 @@
         <div class="pc">
             <div class="search-lg">
                 <input class="searchPro-lg" type="text" name="product" value="Search a product...">
-                <input class="searchSub-lg" type="submit" value=" ">
+                <a href="search.html"><input class="searchSub-lg" type="submit" value=" " onclick=search(event)></a>
             </div>
-            <div id="search-box-md" class="search" onclick=clickSignMd()>
-                <i class="fas fa-search"></i>
+            <div id="search-box-md" class="search">
+                <i class="fas fa-search" onclick=clickSignMd()></i>
                 <div id="search-pop-md" class="search-bar">
-                    <form>
-                        <input class="searchPro" type="text" name="product" value="Search a product...">
-                        <input class="searchSub" type="submit" value=" ">
+                    <form action="search.html">
+                        <input class="searchPro" type="text" name="search" value="Search a product...">
+                        <a href="search.html" ><input class="searchSub" type="submit" value=" " onclick=search(event)></a>
                     </form>
                 </div>
             </div>

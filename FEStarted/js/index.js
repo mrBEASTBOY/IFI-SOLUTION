@@ -42,7 +42,6 @@ function initPage() {
     const $singlePro = $('#single-product-detail');
     $.get('/components/header.html', data => {$start.append(data)})
     $.get('/components/footer.html', data => {$end.append(data)})
-    $.get('/components/singleproduct.html', data => {$singlePro.append(data)})
     $.get('/components/header-product.html', data => {$startPro.append(data); initCartFromStorage();});
     $.ajax({
         url: 'http://localhost:3000/products',
@@ -137,7 +136,7 @@ function generateCommon(template, data, $listProduct) {
         $temp.find('.product-detail-name').text(i.title);
         $temp.find('.product-price').text(i["discount-price"]);
         $temp.find('.product-undiscount').text(i["undiscount-price"]);
-        $temp.find('.product1').append('<a href="single.html" onclick=getId(event)><img src="' + i.pic + '" alt="" class="img-res"></a>');
+        $temp.find('.product1').append('<a href="single.html?id=' + i.id + '&type=' + i.from + '" onclick=getId(event)><img src="' + i.pic + '" alt="" class="img-res"></a>');
         if(i.types == "tag") {
             $temp.find('.tag-decided').addClass('tag');
             $temp.find('.tag-decided').append('<img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/tag.png" alt="tag" class="img-res">')
@@ -150,57 +149,11 @@ function generateCommon(template, data, $listProduct) {
     }
 }
 
-// function getId(event) {
-//     $id = $(event.target).closest('.grid-container').attr('id');
-//     srcPic = $(event.target).attr('src');
-//     if($id == 'home-product') {
-//         $.ajax({
-//             url: 'http://localhost:3000/products',
-//             type : 'GET',
-//             async : true,
-//             contentType: "application/json; charset=utf-8",
-//             dataType: 'JSON',
-//             success : function(data) {
-//                 generateSingleProduct(data, srcPic);
-//             },
-//             error : function() {}
-//         })
-//     } else if($id =='food') {
-//         $.ajax({
-//             url: 'http://localhost:3000/food-products',
-//             type : 'GET',
-//             async : true,
-//             contentType: "application/json; charset=utf-8",
-//             dataType: 'JSON',
-//             success : function(data) {
-//                 generateSingleProduct(data, srcPic);
-//             },
-//             error : function() {}
-//         })
-//     } else if($id == 'veget-fruit') {
-//         $.ajax({
-//             url: 'http://localhost:3000/veget-fruit',
-//             type : 'GET',
-//             async : true,
-//             contentType: "application/json; charset=utf-8",
-//             dataType: 'JSON',
-//             success : function(data) {
-//                 generateSingleProduct(data, srcPic);
-//             },
-//             error : function() {}
-//         })
-//     } else if($id == 'beverage') {
-//         $.ajax({
-//             url: 'http://localhost:3000/beverage',
-//             type : 'GET',
-//             async : true,
-//             contentType: "application/json; charset=utf-8",
-//             dataType: 'JSON',
-//             success : function(data) {
-//                 generateSingleProduct(data, srcPic);
-//             },
-//             error : function() {}
-//         })
-//     }
-// }
+function search(event) {
+    const searchText = $('.searchPro-lg').val();
+    const searchTextMobile = $('#search-pop-md').find('searchPro').val();
+    $('.search-lg').find('a').attr('href', 'search.html?search=' + searchText);
+    $('#search-pop-md').find('form').attr('action', 'search.html?search=' + searchTextMobile);
+}
+
 

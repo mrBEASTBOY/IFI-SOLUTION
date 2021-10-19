@@ -94,7 +94,7 @@ nav {
     border-radius: 7px;
     top: 0.5rem;
     right: 0.5rem;
-    top: 2.5rem;
+    top: 2.1rem;
     visibility: hidden;
 }
 
@@ -102,6 +102,14 @@ nav {
     visibility: visible;
 }
 
+.search-number {
+    padding: 4rem 2rem;
+}
+
+.search-number h2 {
+    font-size: 2.3rem;
+    font-weight: bold;
+}
 .side-bar {
     padding-bottom: 1rem;
 }
@@ -842,6 +850,51 @@ nav {
     grid-gap: 26px 36px;
     background-color: #cccccc00;
     padding: 2.25rem 1.5rem 3rem 1.5rem;
+}
+
+.single-quantity {
+    display: flex;
+}
+
+.single-quantity div {
+    padding: 0.5rem;
+}
+
+.single-quantity-plus, .single-quantity-minus, .single-quantity-value {
+    height: 40px;
+    width: 40px;
+    background: #ccc;
+    position: relative;
+}
+
+.single-quantity-value {
+    text-align: center;
+    margin: 0 0.25rem;
+}
+
+.single-quantity-plus::before, .single-quantity-minus::before {
+    content: '';
+    width: 13px;
+    height: 2px;
+    background: black;
+    left: 50%;
+    margin-left: -7px;
+    margin-top: -0.5px;
+    top: 50%;
+    margin-top: -0.5px;
+    position: absolute;
+}
+
+.single-quantity-plus::after {
+    content: "";
+    height: 13px;
+    width: 2px;
+    background: #000;
+    left: 50%;
+    margin-left: -1.4px;
+    top: 50%;
+    margin-top: -6.2px;
+    position: absolute;
 }
 
 .rise-price {
@@ -1641,8 +1694,8 @@ footer {
 }
 
 .img-magnifier-container {
-    padding: 4rem 2rem;
-    width: 85%;
+    padding: 4rem 8rem;
+    width: 100%;
     margin: 0 auto;
     position: relative;
 }
@@ -2067,7 +2120,7 @@ footer {
     }
 
     .img-magnifier-container {
-        padding: 4rem 7rem;
+        padding: 4rem 13rem;
     }
 
     .cold {
@@ -2520,12 +2573,16 @@ footer {
     .grid-fix {
         grid-gap: 42px 35px!important;
     }
+
+    .change-flex {
+        padding-right: 11rem;
+    }
 }
 
 @media screen and (min-width: 1300px) {
-    /* .view-adv h4 {
-        margin-top: unset;
-    } */
+    .change-flex {
+        padding-right: 20rem;
+    }
 }
 @media screen and (min-width: 1400px) {
     .logo {

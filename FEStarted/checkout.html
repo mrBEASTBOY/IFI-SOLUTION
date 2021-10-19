@@ -21,33 +21,33 @@
 
         <div class="banner">
             <div class="sidenav col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <a class="active" href="#">Branded Foods</a>
-                <a href="#">Households</a>
+                <a class="active" href="product.html">Branded Foods</a>
+                <a href="product.html">Households</a>
                 <div class="veget dropdown-m">
                     <button class="dropbtn-m dropdown-toggle">Veggies & Fruits</button>
                     <div class="dropdown-content-m">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
+                        <a href="product.html">Vegetables</a>
+                        <a href="product.html">Fruits</a>
                     </div>
                 </div>
-                <a href="#">Kitchen</a>
-                <a href="#">Short Codes</a>
+                <a href="product.html">Kitchen</a>
+                <a href="product.html">Short Codes</a>
                 <div class="bever dropdown-m">
                     <button class="dropbtn-m dropdown-toggle">Beverages</button>
                     <div class="dropdown-content-m">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
+                        <a href="product.html">Soft Drinks</a>
+                        <a href="product.html">Juices</a>
                     </div>
                 </div>
-                <a href="#">Pet Food</a>
+                <a href="product.html">Pet Food</a>
                 <div class="frozen dropdown-m">
                     <button class="dropbtn-m dropdown-toggle">Frozen Foods</button>
                     <div class="dropdown-content-m">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
+                        <a href="product.html">Frozen Snacks</a>
+                        <a href="product.html">Frozen Nonveg</a>
                     </div>
                 </div>
-                <a href="#">Bread & Bakery</a>
+                <a href="product.html">Bread & Bakery</a>
             </div>
 
 
@@ -101,7 +101,7 @@
                             <h4>Add a new details</h4>
                         </div>
 
-                        <form action="/lala.php" class="user-detail-info">
+                        <form action="http://localhost:3000/customer-bill" class="user-detail-info">
                             <div class="user-fullname">
                                 <label for="fname">First name:</label>
                                 <input type="text" id="fname" name="fname" placeholder="Full name">
@@ -128,7 +128,7 @@
                                 </select>
                             </div>
 
-                            <button type="submit" class="delivery">Delivery to this address</button>
+                            <button type="submit" class="delivery" onclick=deliver(event)>Delivery to this address</button>
                             <button type="submit" class="make-pay">
                                 Make a Payment <span>></span>
                             </button>

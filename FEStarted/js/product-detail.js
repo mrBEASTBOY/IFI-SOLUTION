@@ -4,29 +4,11 @@ $(document).ready(function () {
     let url = new URL(location.href);
     let searchParams = new URLSearchParams(url.search);
     const id = searchParams.get('id');
-    const type = searchParams.get('type');
     
-    if(type == 'home') {
-        getDataFromAjax('http://localhost:3000/products?id=' + id).done(function (response) {
-            const item = response[0];
-            generateSingle(item)
-        })
-    } else if(type == 'food') {
-        getDataFromAjax('http://localhost:3000/food-products?id=' + id).done(function (response) {
-            const item = response[0];
-            generateSingle(item)
-        })
-    } else if(type == 'veget') {
-        getDataFromAjax('http://localhost:3000/veget-fruit?id=' + id).done(function (response) {
-            const item = response[0];
-            generateSingle(item)
-        })
-    } else if(type == 'bever') {
-        getDataFromAjax('http://localhost:3000/beverage?id=' + id).done(function (response) {
-            const item = response[0];
-            generateSingle(item)
-        })
-    }
+    getDataFromAjax('http://localhost:3000/products?id=' + id).done(function (response) {
+        const item = response[0];
+        generateSingle(item)
+    })
 });
 
 function getDataFromAjax(url) {

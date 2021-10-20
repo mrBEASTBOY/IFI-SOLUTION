@@ -54,101 +54,59 @@ function initPage() {
 		},
         error : function() {}
     })
-    $.ajax({
-        url: 'http://localhost:3000/food-products',
-        type: 'GET',
-        async: true,
-        contentType: "application/json; charset=utf-8",
-		dataType: 'JSON',
-		success : function(data) {
-            generateFoodProduct(data)
-		},
-        error : function() {}
-    })
-
-    $.ajax({
-        url: 'http://localhost:3000/veget-fruit',
-        type: 'GET',
-        async: true,
-        contentType: "application/json; charset=utf-8",
-		dataType: 'JSON',
-        success : function(data) {
-            generateVegetProduct(data)
-		},
-        error : function() {}
-    })
-
-    $.ajax({
-        url: 'http://localhost:3000/beverage',
-        type: 'GET',
-        async: true,
-        contentType: "application/json; charset=utf-8",
-		dataType: 'JSON',
-        success : function(data) {
-            generateBeverProduct(data)
-		},
-        error : function() {}
-    })
+    
 }
 
 function generateProduct(data) {
     const $listProduct = $('#home-product');
+    const $listProductFood = $('#food');
+    const $listProductVeget = $('#veget-fruit');
+    const $listProductBever = $('#beverage');
     let template = "";
     $.get('/components/homeproducts.html', a => {
         template = a;
-        generateCommon(template, data, $listProduct); 
+        generateCommon(template, data, $listProduct, $listProductFood, $listProductVeget, $listProductBever); 
     })
 }
 
 
-function generateFoodProduct(data) {
-    const $listProduct = $('#food');
-    let template = "";
-    $.get('/components/homeproducts.html', a => {
-        template = a;
-        generateCommon(template, data, $listProduct); 
-    })
-}
-
-function generateVegetProduct(data) {
-    const $listProduct = $('#veget-fruit');
-    let template = "";
-    $.get('/components/homeproducts.html', a => {
-        template = a;
-        generateCommon(template, data, $listProduct); 
-    })
-}
-
-function generateBeverProduct(data) {
-    const $listProduct = $('#beverage');
-    let template = "";
-    $.get('/components/homeproducts.html', a => {
-        template = a;
-        generateCommon(template, data, $listProduct);  
-    })
-}
-
-
-function generateCommon(template, data, $listProduct) {
+function generateCommon(template, data, $listProduct, $listProductFood, $listProductVeget, $listProductBever) {
     for (let i of data) {
-        let $temp = $(template);
-        $temp.find('.product-name').attr("id", i.id);
-        $temp.find('.product-detail-name').text(i.title);
-        $temp.find('.product-price').text(i["discount-price"]);
-        $temp.find('.product-undiscount').text(i["undiscount-price"]);
-        $temp.find('.product1').append('<a href="single.html?id=' + i.id + '&type=' + i.from + '" onclick=getId(event)><img src="' + i.pic + '" alt="" class="img-res"></a>');
-        if(i.types == "tag") {
-            $temp.find('.tag-decided').addClass('tag');
-            $temp.find('.tag-decided').append('<img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/tag.png" alt="tag" class="img-res">')
-        } else if(i.types == "offer") {
-            $temp.find('.tag-decided').addClass('tag-offer');
-            $temp.find('.offer').addClass('offer-left');
-            $temp.find('.tag-decided').append('<img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/offer.png" alt="tag" class="img-res">')
+        if(i.from == 'home') {
+            let $temp = $(template);
+            addInfo($temp, i);
+            $listProduct.append($temp);
+        } else if(i.from == 'food') {
+            let $temp = $(template);
+            addInfo($temp, i);
+            $listProductFood.append($temp);
+        } else if(i.from == 'veget') {
+            let $temp = $(template);
+            addInfo($temp, i);
+            $listProductVeget.append($temp);
+        } else if(i.from == 'bever') {
+            let $temp = $(template);
+            addInfo($temp, i);
+            $listProductBever.append($temp);
         }
-        $listProduct.append($temp); 
     }
 }
 
+function addInfo($temp, i) {
+    $temp.find('.product-name').attr("id", i.id);
+    $temp.find('.product-detail-name').text(i.title);
+    $temp.find('.product-price').text(i["discount-price"]);
+    $temp.find('.product-undiscount').text(i["undiscount-price"]);
+    $temp.find('.product1').append('<a href="single.html?id=' + i.id + '" onclick=getId(event)><img src="' + i.pic + '" alt="" class="img-res"></a>');
+    if(i.types == "tag") {
+        $temp.find('.tag-decided').addClass('tag');
+        $temp.find('.tag-decided').append('<img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/tag.png" alt="tag" class="img-res">')
+    } else if(i.types == "offer") {
+        $temp.find('.tag-decided').addClass('tag-offer');
+        $temp.find('.offer').addClass('offer-left');
+        $temp.find('.tag-decided').append('<img src="https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/offer.png" alt="tag" class="img-res">')
+    }
+}
 function search(event) {
     const searchText = $('.searchPro-lg').val();
     const searchTextMobile = $('#search-pop-md').find('searchPro').val();

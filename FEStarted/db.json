@@ -103,9 +103,7 @@
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/4.png",
       "types": "offer",
       "from": "home"
-    }
-  ],
-  "food-products": [
+    },
     {
       "id": "product-5",
       "title": "Knorr Instant Soup (100 Gm)",
@@ -141,9 +139,7 @@
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/1.png",
       "types": "offer",
       "from": "food"
-    }
-  ],
-  "veget-fruit": [
+    },
     {
       "id": "product-9",
       "title": "Fresh Spinach (Palak)",
@@ -179,9 +175,7 @@
       "pic": "https://demo.w3layouts.com/demos_new/template_demo/20-07-2017/grocery_store-demo_Free/725976873/web/images/12.png",
       "types": "offer",
       "from": "veget"
-    }
-  ],
-  "beverage": [
+    },
     {
       "id": "product-13",
       "title": "Mixed Fruit Juice (1 Ltr)",
@@ -220,6 +214,23 @@
     }
   ],
   "customer-bill": [
-    
+    {
+      "firstname": "Le Hoang Linh",
+      "phonenumber": "0985489666",
+      "land": "Ha Noi",
+      "city": "Ha Noi",
+      "home": "office",
+      "bill": [
+        {
+          "number": 1,
+          "productName": "Fortune Sunflower Oil",
+          "productPrice": 39.95,
+          "productQuantity": 5
+        }
+      ],
+      "serviceCharge": "$5.00",
+      "total": "$39.95",
+      "id": 1
+    }
   ]
 }

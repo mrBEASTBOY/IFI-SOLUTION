@@ -8,7 +8,7 @@ function addSingleToCartStorage(event) {
     const $item = $(event.target).closest('.payment');
     const name = $('.single-detail-product').text();
     const price = parseFloat($item.find('.product-price').text().replace('$', ''));
-    const count = parseFloat($('.current-quantity').text());;
+    const count = parseFloat($('.current-quantity').text());
     const id = $item.attr('id');
     const srcPic = $('#productImage').attr('src');
 
@@ -334,12 +334,12 @@ function deliver(event) {
         contentType: "application/json; charset=utf-8",
 		dataType: 'JSON',
         success : function(result) {
-            console.log(formData);
+            localStorage.setItem('cart', JSON.stringify(cart));
 		},
         error : function() {}
     })
 
-    localStorage.setItem('cart', JSON.stringify(cart));
+    
 
 }
 

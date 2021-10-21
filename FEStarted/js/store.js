@@ -241,9 +241,7 @@ function generateSingleItem(newItem) {
     generateSingleAction(newItem);
     updateCartTotal();
 }
-function generateCartRow(newItem) {
 
-}
 
 function generateSingleAction(newItem) {
     var cartRow = document.createElement('li');

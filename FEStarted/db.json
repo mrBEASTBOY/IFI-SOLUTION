@@ -231,6 +231,36 @@
       "serviceCharge": "$5.00",
       "total": "$39.95",
       "id": 1
+    },
+    {
+      "firstname": "Le Hoang Linh",
+      "phonenumber": "098",
+      "land": "1231",
+      "city": "123123",
+      "home": "office",
+      "bill": [
+        {
+          "number": 1,
+          "productName": "Fortune Sunflower Oil",
+          "productPrice": 47.94,
+          "productQuantity": 6
+        },
+        {
+          "number": 2,
+          "productName": "Basmati Rise (5 Kg)",
+          "productPrice": 59.95,
+          "productQuantity": 5
+        },
+        {
+          "number": 3,
+          "productName": "Pepsi Soft Drink (2 Ltr)",
+          "productPrice": 24,
+          "productQuantity": 3
+        }
+      ],
+      "serviceCharge": "$15.00",
+      "total": "$132.89",
+      "id": 2
     }
   ]
 }

@@ -14,16 +14,6 @@ function initSearch() {
     connectAjax('http://localhost:3000/products?title_like=' + searchText);
 }
 
-// function initSearch() {
-//     let url = new URL(location.href);
-//     let searchParams = new URLSearchParams(url.search);
-//     const searchText = searchParams.get('search');
-//     const $searchContainer = $('#search-container');
-//     var count = 0;
-    
-//     $('.search-number').find('h2').find('span').text(count);
-// }
-
 function generateData(data) {
     const $searchContainer = $('#search-container');
     let template = "";
